@@ -59,8 +59,143 @@ section h2:after {
 }
 
 /* Header defaults */
+#start-logo {
+  position: absolute;
+  width: 14em;
+  top: 65px;
+  left: calc(50% - 7em);
+  z-index: 1;
+}
+
 header {
+  display: flex;
+  position: fixed;
+  margin: 0 4em;
+  padding: 10px;
+  width: calc(100vw - 8em);
+  color: #fff;
   background-color: rgba(37, 37, 37, 0.8);
+  border-radius: 0 0 1em 1em;
+  z-index: 2;
+}
+
+header.active {
+  transform: translateY(0);
+}
+
+header .logo {
+  flex-grow: 1;
+  padding-top: 0.25em;
+}
+header .logo img {
+  width: 9em;
+}
+header nav {
+  display: flex;
+}
+
+.nav-item {
+  height: 1.5em;
+  margin: 0 1.5em 0 0;
+}
+
+.nav-item a {
+  font-size: 1.3em;
+  color: #fff;
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 5px;
+  transition: color 1s, background-color 0.5s;
+}
+.nav-item a:hover {
+  color: #202b47;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: #d3d3d3;
+}
+
+#carousel {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+#carousel #carousel-text {
+  position: absolute;
+  top: 35vh;
+  color: #fff;
+  text-shadow: 2px 2px #252525;
+  z-index: 1;
+}
+
+.flex {
+  display: flex;
+}
+
+@media screen and (max-width: 600px) {
+  .flex {
+    flex-flow: column wrap;
+    align-items: center;
+    padding: 0 15px;
+  }
+}
+
+#about p {
+  flex: 3;
+}
+
+#about #aboutmockup {
+  flex: 2;
+  align-self: flex-end;
+}
+
+#about img {
+  display: block;
+}
+
+#staff {
+  height: 100%;
+  color: #252525;
+}
+#staff .wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+#staff .staff-profile {
+  flex: 0 0 100%;
+}
+@media (min-width: 600px) {
+  #staff .staff-profile {
+    flex: 0 0 50%;
+  }
+}
+@media (min-width: 960px) {
+  #staff .staff-profile {
+    flex: 0 0 33%;
+  }
+}
+#staff .staff-profile {
+  transition: background-color 0.3s;
+}
+#staff .staff-profile:hover {
+  color: #fff;
+  background-color: #f39c12;
+}
+#staff .staff-profile .headshot {
+  height: 5em;
+  width: 5em;
+  margin-left: calc(50% - 2.5em);
+  padding-top: 10px;
+}
+#staff .staff-profile .staff-name {
+  text-align: center;
+  font-size: 2em;
+}
+#staff .staff-profile .staff-bio {
+  width: calc(100% - 5em);
+  margin-left: 2.5em;
+  text-align: center;
+  font-style: italic;
 }
 
 /* 
